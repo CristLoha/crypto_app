@@ -1,12 +1,14 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:crypto_app/shared/theme.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/custom_slider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // final List<String> imageList = ['assets/'];
     Widget header() {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
@@ -58,9 +60,29 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget contentSlider() {
+      return CarouselSlider(
+        options: CarouselOptions(
+          aspectRatio: 16 / 9,
+          enableInfiniteScroll: true,
+          autoPlayCurve: Curves.fastOutSlowIn,
+          autoPlayAnimationDuration: const Duration(milliseconds: 800),
+          viewportFraction: 0.8,
+          autoPlay: true,
+          height: 340.0,
+        ),
+        items: [
+          CustomSlider(),
+        ],
+      );
+    }
+
     return Scaffold(
       body: ListView(
-        children: [header()],
+        children: [
+          header(),
+          contentSlider(),
+        ],
       ),
     );
   }
