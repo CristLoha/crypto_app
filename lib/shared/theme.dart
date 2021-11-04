@@ -6,7 +6,7 @@ double defaultMargin = 24.0;
 
 Color primaryColor = const Color(0xff18093A);
 Color secondaryColor = const Color(0xffD5F566);
-Color backgroundColor1 = const Color(0xffFFFFFF);
+Color whiteColor = const Color(0xffFFFFFF);
 Color blackColor = const Color(0xff17161B);
 Color greyColor = const Color(0xff6A6C7C);
 Color greyColor2 = const Color(0xffA1A1B1);
@@ -17,6 +17,10 @@ TextStyle primaryTextStyle = GoogleFonts.poppins(
 
 TextStyle secondaryTextStyle = GoogleFonts.poppins(
   color: greyColor,
+);
+
+TextStyle whiteTextStyle = GoogleFonts.poppins(
+  color: whiteColor,
 );
 
 FontWeight light = FontWeight.w300;

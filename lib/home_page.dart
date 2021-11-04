@@ -69,10 +69,12 @@ class HomePage extends StatelessWidget {
           autoPlayAnimationDuration: const Duration(milliseconds: 800),
           viewportFraction: 0.8,
           autoPlay: true,
-          height: 340.0,
+          height: 345.0,
         ),
         items: [
-          CustomSlider(),
+          CustomSlider(image: 'assets/c_images1.png'),
+          CustomSlider(image: 'assets/c_images2.png'),
+          CustomSlider(image: 'assets/c_images3.png'),
         ],
       );
     }
