@@ -69,11 +69,12 @@ class CustomSlider extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 18),
+                const SizedBox(width: 18),
                 Expanded(
                   child: SizedBox(
                     child: Image.asset(
                       'assets/icon_btn_wishlist.png',
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),

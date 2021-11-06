@@ -68,15 +68,15 @@ class HomePage extends StatelessWidget {
           autoPlayCurve: Curves.fastOutSlowIn,
           autoPlayAnimationDuration: const Duration(milliseconds: 800),
           viewportFraction: 0.7,
-          autoPlay: true,
+          autoPlay: false,
           scrollDirection: Axis.horizontal,
           enlargeCenterPage: true,
           height: 380.0,
         ),
         items: [
-          CustomSlider(image: 'assets/c_images1.png'),
-          CustomSlider(image: 'assets/c_images2.png'),
-          CustomSlider(image: 'assets/c_images3.png'),
+          const CustomSlider(image: 'assets/c_images1.png'),
+          const CustomSlider(image: 'assets/c_images2.png'),
+          const CustomSlider(image: 'assets/c_images3.png'),
         ],
       );
     }
@@ -97,6 +97,36 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget imageUser() {
+      return Container(
+        margin: const EdgeInsets.only(
+          top: 16,
+        ),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(width: defaultMargin),
+              const CustomUserImage(image: 'assets/user1.png'),
+              const SizedBox(width: 12),
+              const CustomUserImage(image: 'assets/user2.png'),
+              const SizedBox(width: 12),
+              const CustomUserImage(image: 'assets/user3.png'),
+              const SizedBox(width: 12),
+              const CustomUserImage(image: 'assets/user4.png'),
+              const SizedBox(width: 12),
+              const CustomUserImage(image: 'assets/user5.png'),
+              const SizedBox(width: 12),
+              const CustomUserImage(image: 'assets/user6.png'),
+              const SizedBox(width: 12),
+              const CustomUserImage(image: 'assets/user5.png'),
+              SizedBox(width: defaultMargin),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: ListView(
@@ -104,7 +134,31 @@ class HomePage extends StatelessWidget {
           header(),
           contentSlider(),
           popularTitle(),
+          imageUser(),
         ],
+      ),
+    );
+  }
+}
+
+class CustomUserImage extends StatelessWidget {
+  final String image;
+  const CustomUserImage({
+    Key? key,
+    required this.image,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 55,
+      height: 55,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
