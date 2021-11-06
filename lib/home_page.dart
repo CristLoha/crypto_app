@@ -1,8 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:crypto_app/shared/theme.dart';
+import 'package:crypto_app/widgets/custom_content.dart';
 import 'package:flutter/material.dart';
-
 import 'widgets/custom_slider.dart';
+import 'widgets/custom_user_image.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -127,6 +128,59 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget myRecentBidsTitle() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 30,
+          left: defaultMargin,
+        ),
+        child: Text(
+          'My Recent Bids',
+          style: primaryTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: medium,
+          ),
+        ),
+      );
+    }
+
+    Widget myRecentBidsContent() {
+      return Container(
+        padding: EdgeInsets.symmetric(
+          vertical: 16,
+          horizontal: defaultMargin,
+        ),
+        child: Column(
+          children: [
+            CustomContent(
+              image: 'assets/i_content1.png',
+              title: 'Dart Celline',
+              date: 'Apr 22',
+              price: '28.40',
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            CustomContent(
+              image: 'assets/i_content2.png',
+              title: 'Zipzip Koin',
+              date: 'Feb 31',
+              price: '1.10',
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            CustomContent(
+              image: 'assets/i_content3.png',
+              title: 'Dart Celline',
+              date: 'Feb 9',
+              price: '590.00',
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: ListView(
@@ -135,30 +189,9 @@ class HomePage extends StatelessWidget {
           contentSlider(),
           popularTitle(),
           imageUser(),
+          myRecentBidsTitle(),
+          myRecentBidsContent()
         ],
-      ),
-    );
-  }
-}
-
-class CustomUserImage extends StatelessWidget {
-  final String image;
-  const CustomUserImage({
-    Key? key,
-    required this.image,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 55,
-      height: 55,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        image: DecorationImage(
-          image: AssetImage(image),
-          fit: BoxFit.cover,
-        ),
       ),
     );
   }
