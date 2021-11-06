@@ -67,9 +67,11 @@ class HomePage extends StatelessWidget {
           enableInfiniteScroll: true,
           autoPlayCurve: Curves.fastOutSlowIn,
           autoPlayAnimationDuration: const Duration(milliseconds: 800),
-          viewportFraction: 0.8,
+          viewportFraction: 0.7,
           autoPlay: true,
-          height: 345.0,
+          scrollDirection: Axis.horizontal,
+          enlargeCenterPage: true,
+          height: 380.0,
         ),
         items: [
           CustomSlider(image: 'assets/c_images1.png'),
@@ -79,11 +81,29 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget popularTitle() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 50,
+          left: defaultMargin,
+        ),
+        child: Text(
+          'Popular Creators',
+          style: primaryTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: medium,
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: ListView(
         children: [
           header(),
           contentSlider(),
+          popularTitle(),
         ],
       ),
     );

@@ -11,11 +11,9 @@ class CustomSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 340,
       width: 270,
       margin: const EdgeInsets.only(
         top: 40,
-        right: 20,
       ),
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
@@ -71,17 +69,17 @@ class CustomSlider extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 18,
-                ),
-                Image.asset(
-                  'assets/icon_btn_wishlist.png',
-                  height: 40,
-                  width: 40,
+                SizedBox(width: 18),
+                Expanded(
+                  child: SizedBox(
+                    child: Image.asset(
+                      'assets/icon_btn_wishlist.png',
+                    ),
+                  ),
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
