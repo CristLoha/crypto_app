@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:crypto_app/shared/theme.dart';
 import 'package:crypto_app/widgets/custom_content.dart';
 import 'package:flutter/material.dart';
-import 'widgets/custom_slider.dart';
-import 'widgets/custom_user_image.dart';
+import '../widgets/custom_slider.dart';
+import '../widgets/custom_user_image.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
